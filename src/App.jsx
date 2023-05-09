@@ -3,6 +3,7 @@ import axios from "axios";
 import openAILogo from "./assets/openai_logo.jpg";
 import './App.css'
 function App() {
+  const serverURL = import.meta.env.VITE_SERVER_URL || 'http://localhost:8000/generateimages';
   const [generatedImages, setGeneratedImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [prompt, setPrompt] = useState('');
@@ -14,7 +15,7 @@ function App() {
     }
     setLoading(true);
     try {
-      let response = await axios.post('http://localhost:8000/generateimages',
+      let response = await axios.post(serverURL,
                     {prompt: prompt});  
       let data = response.data;
       setGeneratedImages(data.data);
