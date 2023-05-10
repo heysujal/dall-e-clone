@@ -3,7 +3,7 @@ import axios from "axios";
 import openAILogo from "./assets/openai_logo.jpg";
 import './App.css'
 function App() {
-  const serverURL = import.meta.env.VITE_SERVER_URL || 'http://localhost:8000/generateimages';
+  const serverURL = import.meta.env.VITE_SERVER_URL || 'http://localhost:8000';
   const [generatedImages, setGeneratedImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [prompt, setPrompt] = useState('');
