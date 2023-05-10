@@ -15,7 +15,7 @@ function App() {
     }
     setLoading(true);
     try {
-      let response = await axios.post(serverURL,
+      let response = await axios.post(`${serverURL}/generateimages`,
                     {prompt: prompt});  
       let data = response.data;
       setGeneratedImages(data.data);
